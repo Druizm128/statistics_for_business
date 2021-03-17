@@ -1,0 +1,8 @@
+"0","# This is the configuration of your R Markdown Document."
+"0","# Do not move or erase this line."
+"0","knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)"
+"0",""
+"0","library(tidyverse)"
+"0","library(readxl)"
+"0",""
+"0","source('lib/auxiliary_functions.R')"

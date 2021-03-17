@@ -1,0 +1,2 @@
+"0","# This command reads the Excel Sheet into R"
+"0","tbl_data <- read_excel(""data/Mercados Municipales FINAL English.xlsx"", sheet = ""Data"")"

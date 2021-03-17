@@ -1,0 +1,87 @@
+---
+title: "Your project name goes here"
+author: "Your name and student id goes here"
+date: "3/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# This is the configuration of your R Markdown Document.
+# Do not move or erase this line.
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(readxl)
+
+source('lib/auxiliary_functions.R')
+```
+
+# R Markdown Syntax Cheat sheet
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+Plain text
+End a line wit two spaces to start a new paragraph
+*italics*
+**bold**
+
+> blockquote
+
+* unordered list
+* item 2
+  + sub-item 1
+  + sub-item 2
+  
+1. ordered list
+2. item 2
+  + sub-item 1
+  + sub-item 2
+  
+  
+image: ![](figs/logo.png)
+
+# How load a dataset
+
+1. Go to
+2. Click import dataset
+3. Click browse
+4. Choose from Excel
+5. Configure import options is necessary
+  - name: name of the dataset object (i.e. data_markets)
+  - sheet: in Excel files always remember to pick the right sheet in the workbook.
+  - skip rows (remember first line in the dataset should be the name of the fields)
+6. Copy and paste the generated code line
+
+
+![](figs/import_excel.png)
+
+```{r}
+# This command reads the Excel Sheet into R
+tbl_data <- read_excel("data/Mercados Municipales FINAL English.xlsx", sheet = "Data")
+```
+
+# How to plot a graph
+
+```{r, echo = TRUE}
+# Specify the data table
+tbl_data %>% 
+  # Select the columns you want to plot
+  select(Q16) %>% 
+  # Plot the graph
+  fun_draw_histogram(Q16) +
+  # Specify the title and labels (Watch out for the plus sign)
+  labs(
+    title = "Distribution of how much you spend",
+    x = "Pesos"
+  )
+```
+
+
+
+
+
+
